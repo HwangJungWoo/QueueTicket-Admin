@@ -1,0 +1,7 @@
+{
+  "name": "QueueTicketAdmin",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
