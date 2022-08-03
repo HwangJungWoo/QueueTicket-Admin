@@ -1,0 +1,161 @@
+:host {
+  /*Color*/
+  --white-color: #fff;
+  --black-color: #140a00;
+  --blue-color: #045fd4;
+  --red-color: #ff0000;
+  --grey-dark-color: #909090;
+  --grey-light-color: #e0e0e0;
+
+  /*Size*/
+  --padding: 12px;
+  --avatar-size: 36px;
+
+  /*Font Size*/
+  --font-large: 18px;
+  --font-medium: 14px;
+  --font-small: 12px;
+  --font-micro: 10px;
+}
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+.container {
+  font-family: Roboto;
+}
+
+.box {
+  width: 100%;
+}
+
+.a {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: var(--padding);
+}
+
+.title {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 800;
+  margin-top: 1rem;
+}
+
+.btn {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  background-color: var(--blue-color);
+  color: var(--white-color);
+}
+
+.btn:active {
+  background-color: var(--red-color);
+}
+
+.btn:hover {
+  background-color: var(--red-color);
+}
+
+
+
+.search {
+  display: flex;
+  justify-content: center; // 가로 중앙정렬
+  align-items: center; // 세로 중앙정렬
+  width: 400px;
+  height: 40px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.b {
+  display: flex;
+  margin-top: 20px;
+}
+
+.table {
+  width: 100%;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  border: 1px solid #444444;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+.thead {
+  background: var(--grey-dark-color);
+}
+
+th,
+td {
+  border: 1px solid #444444;
+  padding: 10px;
+  text-align: center;
+  overflow: hidden;
+}
+
+td button {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  background-color: var(--blue-color);
+  color: var(--white-color);
+}
+
+td button:hover {
+  color: var(--white-color);
+  cursor: pointer;
+  background-color: var(--red-color);
+}
+
+tr:hover td {
+  color: var(--white-color);
+  cursor: pointer;
+  background-color: var(--blue-color);
+}
+
+input {
+  text-align: center;
+}
+
+.btn-search {
+  border: none;
+  padding: 6px 20px;
+  background-color: var(--blue-color);
+  color: var(--white-color)
+}
+
+.btn-search:hover {
+  color: var(--white-color);
+  cursor: pointer;
+  background-color: var(--red-color);
+}
+
+@media screen and (max-width: 768px) {
+  .thead {
+    font-size: var(--font-small);
+    margin: var(--padding);
+  }
+
+  .tbody {
+    font-size: var(--font-small);
+    margin: var(--padding);
+  }
+}
+
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

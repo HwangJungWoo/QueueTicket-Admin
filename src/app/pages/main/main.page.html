@@ -1,0 +1,78 @@
+<ion-header>
+</ion-header>
+
+<ion-content>
+
+  <!--메인박스 -->
+  <div class="container">
+    <!-- 네비게이션바 -->
+    <!-- <div class="header">
+      <app-header></app-header>
+    </div> -->
+
+    <!-- 검색박스 -->
+    <!-- <div class="box a">
+      <span class="search">
+        <input type="text" placeholder="전화번호 입력" [(ngModel)]="ngData">
+        <button class="btn-search" (click)="onSearch(ngData)">찾기</button>
+      </span>
+    </div> -->
+
+    <!-- 타이틀 , 초기화, 지난내역보기 -->
+    <div class="title">
+      관리자페이지
+
+      <div>
+        <button class="btn" (click)="onBackUp()">백업</button>
+
+        <button class="btn" (click)="onInit()" >초기화</button>
+
+        <button class="btn" (click)="goHistoryPage()">지난내역보기</button>
+      </div>
+    </div>
+
+
+    <div class="box b">
+      <table class="table">
+        <thead class="thead">
+          <tr>
+            <th>No</th>
+            <th>대기표</th>
+            <th>접수시간</th>
+            <th>전화번호</th>
+            <th>입장여부</th>
+            <th>입장완료하기</th>
+            <th>메세지 보내기</th>
+          </tr>
+        </thead>
+        <tbody class="tbody">
+          <tr *ngFor="let user of user | paginate:{itemsPerPage:10, currentPage:p}; let i = index;">
+            <!-- 순번 -->
+            <td>{{ i + 1 }}</td>
+            <!-- 접수날짜 -->
+            <td>{{ user.order }}</td>
+            <!-- 접수날짜 -->
+            <td>{{ user.date }}</td>
+            <!-- 전화번호 -->
+            <td>{{ user.phone_number}}</td>
+            <!-- 입장완료 -->
+            <td>
+              <div *ngIf="user.complete == 2; then thenBlock else elseBlock"></div>
+              <ng-template #thenBlock>입장완료</ng-template>
+              <ng-template #elseBlock>대기중</ng-template>
+            </td>
+
+            <td><button class="btn-tbody" (click)="updateCompletedEntrance(user.order)">입장완료</button></td>
+            <td><button class="btn-tbody" (click)="sendNoti(user.token, user.phone_number)">메세지 보내기</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 페이지 -->
+    <div class="page">
+      <pagination-controls (pageChange)="p = $event" previousLabel="이전" nextLabel="다음"></pagination-controls>
+    </div>
+  </div>
+
+</ion-content>

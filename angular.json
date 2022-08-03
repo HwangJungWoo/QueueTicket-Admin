@@ -31,7 +31,8 @@
               }
             ],
             "styles": ["src/theme/variables.scss", "src/global.scss"],
-            "scripts": [],
+            "scripts": [
+            ],
             "aot": false,
             "vendorChunk": true,
             "extractLicenses": false,
@@ -148,7 +149,8 @@
   "cli": {
     "schematicCollections": [
       "@ionic/angular-toolkit"
-    ]
+    ],
+    "analytics": "a5f2b79d-9899-4c8a-aade-c268a6c1bec6"
   },
   "schematics": {
     "@ionic/angular-toolkit:component": {
