@@ -165,9 +165,9 @@ export class MainPage implements OnInit {
   // 카카오 알림톡 ---------------------------------------------------------------------------------
 
 
-  sendAlimTalk(phone:string) {
+  sendAlimTalk(phone: string) {
 
-    let url = `http://45.119.146.219:3000/`;
+    let url = `https://www.jungsoft21.info/hello`;
 
     const params = new HttpParams().set('phone', phone);
 
@@ -185,7 +185,8 @@ export class MainPage implements OnInit {
     };
 
     this.http.get(url, body).subscribe(data => {
-      console.log(data);
+      console.log(JSON.stringify(data));
+      alert(JSON.stringify(data));
     });
   }
 }
